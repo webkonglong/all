@@ -1,0 +1,6 @@
+/ios
+/android
+/build
+.dart_tool
+/test
+.DS_Store
