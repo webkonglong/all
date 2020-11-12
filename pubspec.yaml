@@ -24,6 +24,20 @@ flutter:
     - images/message.png
     - images/change_message.png
 
+    - images/home/discern_qr_code.png
+    - images/home/qr_code.png
+    - images/home/random.png
+    - images/home/nine_pic.png
+    - images/home/food.png
+    - images/home/id_photo.png
+    - images/home/taobao.png
+    - images/home/pdd.png
+    - images/home/ocr.png
+    - images/home/bullet.png
+    - images/home/noise.png
+    - images/home/scanning.png
+    - images/home/more.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
