@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import './local_modules/px.dart';
 import 'pages/home/home.dart';
+import 'pages/random/random.dart';
 
 class HomeRouter extends StatefulWidget {
   @override
-  routerState createState() {
-    return routerState();
+  RouterState createState() {
+    return RouterState();
   }
 }
 
-class routerState extends State<HomeRouter> {
+class RouterState extends State<HomeRouter> {
   final List<Widget> list = List();
   int _currentIndex = 0;
 
@@ -59,14 +60,15 @@ class Router extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '爱赚',
+      title: 'all',
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => HomeRouter(),
+        '/random': (BuildContext context) => Random(),
       },
     );
   }
 }
 
-final ThemeData mDefaultTheme = new ThemeData();
+final ThemeData mDefaultTheme = new ThemeData(primaryColor: Color(0xFF3A4049));
