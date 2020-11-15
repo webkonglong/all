@@ -26,18 +26,18 @@ class _HomePage extends State<Home> with TickerProviderStateMixin<Home> {
   ScrollController _controller = new ScrollController();
   List<Widget> routerWidget = [
     null,
-    Random(),
-    Random(),
-    Random(),
-    Random(),
-    Random(),
-    Random(),
-    Random(),
-    Random(),
-    Random(),
-    Random(),
-    Random(),
-    Random(),
+    RandomApp(),
+    RandomApp(),
+    RandomApp(),
+    RandomApp(),
+    RandomApp(),
+    RandomApp(),
+    RandomApp(),
+    RandomApp(),
+    RandomApp(),
+    RandomApp(),
+    RandomApp(),
+    RandomApp(),
   ];
 
   Widget appsWidget() {

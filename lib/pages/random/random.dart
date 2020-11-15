@@ -1,15 +1,28 @@
 import 'package:flutter/material.dart';
 import '../../local_modules/px.dart';
+import 'dart:math';
+import '../../components/title.dart';
+import '../../components/button.dart';
 
-class Random extends StatefulWidget {
+class Props {
+  final String text;
+  final Function callback; //商品描述
+  Props(this.text, this.callback);
+}
+
+class RandomApp extends StatefulWidget {
   @override
   _Random createState() => _Random();
 }
 
-class _Random extends State<Random> with TickerProviderStateMixin<Random> {
+class _Random extends State<RandomApp>
+    with TickerProviderStateMixin<RandomApp> {
   int _random = 0;
   TextEditingController startRandom;
   TextEditingController endRandom;
+
+  var rng = new Random();
+  int createRandom(int min, int max) => min + rng.nextInt(max - min);
 
   @override
   void initState() {
@@ -82,6 +95,7 @@ class _Random extends State<Random> with TickerProviderStateMixin<Random> {
                 height: Px.px(100),
                 child: TextField(
                     controller: startRandom,
+                    keyboardType: TextInputType.number,
                     cursorColor: const Color(0xFF3A4049),
                     style: TextStyle(
                       color: Color(0xFF3A4049),
@@ -106,6 +120,7 @@ class _Random extends State<Random> with TickerProviderStateMixin<Random> {
                 height: Px.px(100),
                 child: TextField(
                     controller: endRandom,
+                    keyboardType: TextInputType.number,
                     cursorColor: const Color(0xFF3A4049),
                     style: new TextStyle(
                       color: const Color(0xFF3A4049),
@@ -132,9 +147,17 @@ class _Random extends State<Random> with TickerProviderStateMixin<Random> {
               padding: EdgeInsets.all((30)),
               child: Column(
                 children: [
-                  titleWidget(),
+                  AppTitle('随机数'),
                   resultWidget(),
                   conditionWidget(),
+                  Button(
+                      text: '生成随机数',
+                      callback: () {
+                        setState(() {
+                          _random = createRandom(int.parse(startRandom.text),
+                              int.parse(endRandom.text) + 1);
+                        });
+                      })
                 ],
               ),
             )

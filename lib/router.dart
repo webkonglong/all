@@ -65,7 +65,7 @@ class Router extends StatelessWidget {
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => HomeRouter(),
-        '/random': (BuildContext context) => Random(),
+        '/random': (BuildContext context) => RandomApp(),
       },
     );
   }
