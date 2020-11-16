@@ -152,6 +152,7 @@ class _Random extends State<RandomApp>
                   conditionWidget(),
                   Button(
                       text: '生成随机数',
+                      leftText: '',
                       callback: () {
                         setState(() {
                           _random = createRandom(int.parse(startRandom.text),

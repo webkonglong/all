@@ -68,8 +68,7 @@ class _CreateCode extends State<CreateCode>
               data: textareaValue.text,
               version: QrVersions.auto,
               size: Px.px(400),
-            ),
-          )
+            ))
         : Container();
   }
 
