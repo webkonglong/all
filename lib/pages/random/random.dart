@@ -74,7 +74,7 @@ class _Random extends State<RandomApp>
     return Container(
         width: Px.px(690),
         height: Px.px(270),
-        margin: EdgeInsets.fromLTRB(0, 0, 0, Px.px(30)),
+        margin: EdgeInsets.fromLTRB(0, 0, 0, Px.px(60)),
         padding: EdgeInsets.all(Px.px(30)),
         decoration: new BoxDecoration(
             color: Color(0xFFFFFFFF),

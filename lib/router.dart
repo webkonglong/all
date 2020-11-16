@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './local_modules/px.dart';
 import 'pages/home/home.dart';
 import 'pages/random/random.dart';
+import 'pages/createCode/createCode.dart';
 
 class HomeRouter extends StatefulWidget {
   @override
@@ -66,6 +67,7 @@ class Router extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => HomeRouter(),
         '/random': (BuildContext context) => RandomApp(),
+        '/create_code': (BuildContext context) => CreateCode(),
       },
     );
   }
