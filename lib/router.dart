@@ -3,6 +3,8 @@ import './local_modules/px.dart';
 import 'pages/home/home.dart';
 import 'pages/random/random.dart';
 import 'pages/createCode/createCode.dart';
+import 'pages/food/food.dart';
+import 'pages/food/foodlist.dart';
 
 class HomeRouter extends StatefulWidget {
   @override
@@ -68,6 +70,8 @@ class Router extends StatelessWidget {
         '/': (BuildContext context) => HomeRouter(),
         '/random': (BuildContext context) => RandomApp(),
         '/create_code': (BuildContext context) => CreateCode(),
+        '/food_list': (BuildContext context) => FoodList(),
+        '/food': (BuildContext context) => Food(),
       },
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../local_modules/px.dart';
 import '../random/random.dart';
 import '../createCode/createCode.dart';
+import '../food/food.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -35,7 +36,7 @@ class _HomePage extends State<Home> with TickerProviderStateMixin<Home> {
     CreateCode(),
     RandomApp(),
     RandomApp(),
-    RandomApp(),
+    Food(),
     RandomApp(),
     RandomApp(),
     RandomApp(),
