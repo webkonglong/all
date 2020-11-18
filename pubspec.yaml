@@ -29,6 +29,8 @@ flutter:
     - images/out.png
     - images/enter.png
     - images/close.png
+    - images/full_screen.png
+    - images/check.png
 
     - images/home/discern_qr_code.png
     - images/home/qr_code.png

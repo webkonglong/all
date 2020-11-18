@@ -38,7 +38,7 @@ class _CreateCode extends State<CreateCode>
             margin: EdgeInsets.fromLTRB(0, 0, 0, Px.px(60)),
             decoration: new BoxDecoration(
                 color: Color(0xFFFFFFFF),
-                borderRadius: new BorderRadius.circular(Px.px(30))),
+                borderRadius: new BorderRadius.circular(Px.px(20))),
             child: TextField(
                 controller: textareaValue,
                 cursorColor: const Color(0xFF3A4049),
@@ -79,7 +79,6 @@ class _CreateCode extends State<CreateCode>
         body: ListView(
           children: [
             Container(
-              padding: EdgeInsets.all((30)),
               child: Column(
                 children: [
                   AppTitle('二维码生成'),

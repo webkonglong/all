@@ -3,6 +3,7 @@ import '../../local_modules/px.dart';
 import '../random/random.dart';
 import '../createCode/createCode.dart';
 import '../food/food.dart';
+import '../bullet/bullet.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -12,16 +13,16 @@ class Home extends StatefulWidget {
 const apps = [
   {'name': '淘宝优惠券', 'icon': 'taobao', 'route': 1},
   {'name': '拼多多优惠券', 'icon': 'pdd', 'route': 2},
-  {'name': '白噪音', 'icon': 'noise', 'route': 3},
-  {'name': 'OCR文本识别', 'icon': 'ocr', 'route': 4},
+  {'name': '手持弹幕', 'icon': 'bullet', 'route': 3},
+  {'name': '吃什么?', 'icon': 'food', 'route': 4},
   {'name': '二维码扫描', 'icon': 'discern_qr_code', 'route': 5},
   {'name': '二维码生成', 'icon': 'qr_code', 'route': 6},
   {'name': '随机数生成', 'icon': 'random', 'route': 7},
   {'name': '九格宫切图', 'icon': 'nine_pic', 'route': 8},
-  {'name': '吃什么?', 'icon': 'food', 'route': 9},
+  {'name': 'OCR文本识别', 'icon': 'ocr', 'route': 9},
   {'name': '证件照换底', 'icon': 'id_photo', 'route': 10},
   {'name': '扫描件', 'icon': 'scanning', 'route': 11},
-  {'name': '排序设置', 'icon': 'set', 'route': 12},
+  {'name': '白噪音', 'icon': 'noise', 'route': 12},
 ];
 
 class _HomePage extends State<Home> with TickerProviderStateMixin<Home> {
@@ -30,13 +31,13 @@ class _HomePage extends State<Home> with TickerProviderStateMixin<Home> {
     null,
     RandomApp(),
     RandomApp(),
-    RandomApp(),
-    RandomApp(),
+    Bullet(),
+    Food(),
     RandomApp(),
     CreateCode(),
     RandomApp(),
     RandomApp(),
-    Food(),
+    RandomApp(),
     RandomApp(),
     RandomApp(),
     RandomApp(),

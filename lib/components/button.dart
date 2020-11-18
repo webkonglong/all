@@ -18,7 +18,7 @@ class Button extends StatelessWidget {
         alignment: Alignment.center,
         decoration: new BoxDecoration(
             color: Color(0xFF3A4049),
-            borderRadius: new BorderRadius.circular(Px.px(25))),
+            borderRadius: new BorderRadius.circular(Px.px(20))),
         child: Text(
           text,
           style: TextStyle(color: Color(0xFFFFFFFF), fontSize: Px.px(50)),
@@ -34,13 +34,14 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return leftText != ''
         ? Container(
+            padding: EdgeInsets.fromLTRB(Px.px(25), 0, Px.px(25), 0),
             child: Row(
               children: [
-                button(220, leftText, leftCallback, 20),
-                button(400, text, callback, 0),
+                button(250, leftText, leftCallback, 20),
+                button(430, text, callback, 0),
               ],
             ),
           )
-        : button(640, text, callback, 0);
+        : button(690, text, callback, 0);
   }
 }

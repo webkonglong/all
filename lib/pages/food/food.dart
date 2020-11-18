@@ -107,7 +107,7 @@ class _Food extends State<Food> with TickerProviderStateMixin<Food> {
       height: Px.px(400),
       decoration: new BoxDecoration(
           color: Color(0xFF3A4049),
-          borderRadius: new BorderRadius.circular(Px.px(30))),
+          borderRadius: new BorderRadius.circular(Px.px(20))),
       alignment: Alignment.center,
       margin: EdgeInsets.fromLTRB(0, 0, 0, Px.px(60)),
       child: Text(
@@ -123,26 +123,25 @@ class _Food extends State<Food> with TickerProviderStateMixin<Food> {
         appBar: appBarWidget(),
         body: ListView(children: [
           Container(
-              padding: EdgeInsets.all((30)),
               child: Column(children: [
-                AppTitle('吃什么?'),
-                resultWidget(),
-                Button(
-                  text: '吃什么?',
-                  leftText: '菜单',
-                  callback: () {
-                    setState(() {
-                      resultIndex = createRandom(0, foodList.length);
-                    });
-                  },
-                  leftCallback: () {
-                    Navigator.push(
-                        context,
-                        new MaterialPageRoute(
-                            builder: (BuildContext context) => FoodList()));
-                  },
-                )
-              ]))
+            AppTitle('吃什么?'),
+            resultWidget(),
+            Button(
+              text: '吃什么?',
+              leftText: '菜单',
+              callback: () {
+                setState(() {
+                  resultIndex = createRandom(0, foodList.length);
+                });
+              },
+              leftCallback: () {
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (BuildContext context) => FoodList()));
+              },
+            )
+          ]))
         ]));
   }
 }

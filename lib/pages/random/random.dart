@@ -60,7 +60,7 @@ class _Random extends State<RandomApp>
       height: Px.px(400),
       decoration: new BoxDecoration(
           color: Color(0xFF3A4049),
-          borderRadius: new BorderRadius.circular(Px.px(30))),
+          borderRadius: new BorderRadius.circular(Px.px(20))),
       alignment: Alignment.center,
       margin: EdgeInsets.fromLTRB(0, 0, 0, Px.px(30)),
       child: Text(
@@ -78,7 +78,7 @@ class _Random extends State<RandomApp>
         padding: EdgeInsets.all(Px.px(30)),
         decoration: new BoxDecoration(
             color: Color(0xFFFFFFFF),
-            borderRadius: new BorderRadius.circular(Px.px(30))),
+            borderRadius: new BorderRadius.circular(Px.px(20))),
         child: Column(
           children: [
             Container(
@@ -91,7 +91,7 @@ class _Random extends State<RandomApp>
             ),
             Row(children: [
               Container(
-                width: Px.px(200),
+                width: Px.px(225),
                 height: Px.px(100),
                 child: TextField(
                     controller: startRandom,
@@ -116,7 +116,7 @@ class _Random extends State<RandomApp>
                 ),
               ),
               Container(
-                width: Px.px(200),
+                width: Px.px(225),
                 height: Px.px(100),
                 child: TextField(
                     controller: endRandom,
@@ -144,7 +144,6 @@ class _Random extends State<RandomApp>
         body: ListView(
           children: [
             Container(
-              padding: EdgeInsets.all((30)),
               child: Column(
                 children: [
                   AppTitle('随机数'),
