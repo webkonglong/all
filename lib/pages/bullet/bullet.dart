@@ -1,8 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import '../../local_modules/px.dart';
 import '../../components/title.dart';
+import './roll.dart';
 
 class Bullet extends StatefulWidget {
   @override
@@ -87,8 +86,14 @@ class _Bullet extends State<Bullet> with TickerProviderStateMixin<Bullet> {
                   fit: BoxFit.contain,
                 ),
               ),
-              onTap: () {
-                print('全屏');
+              onTap: () => {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (BuildContext context) {
+                  return Roll(
+                      backgroundColor: backgroundColor,
+                      textColor: textColor,
+                      text: text);
+                }))
               },
             ),
           )

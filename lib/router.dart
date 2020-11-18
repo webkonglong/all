@@ -6,6 +6,7 @@ import 'pages/createCode/createCode.dart';
 import 'pages/food/food.dart';
 import 'pages/food/foodlist.dart';
 import 'pages/bullet/bullet.dart';
+import 'pages/bullet/roll.dart';
 
 class HomeRouter extends StatefulWidget {
   @override
@@ -74,6 +75,7 @@ class Router extends StatelessWidget {
         '/food_list': (BuildContext context) => FoodList(),
         '/food': (BuildContext context) => Food(),
         '/bullet': (BuildContext context) => Bullet(),
+        '/roll': (BuildContext context) => Roll(),
       },
     );
   }
