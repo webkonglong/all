@@ -23,7 +23,7 @@ class _Roll extends State<Roll> with TickerProviderStateMixin<Roll> {
     if (_controller != null) {
       _controller.jumpTo(_controller.position.minScrollExtent);
       _controller.animateTo(_controller.position.maxScrollExtent,
-          duration: Duration(milliseconds: 4000), curve: Curves.linear);
+          duration: Duration(milliseconds: 10000), curve: Curves.linear);
     }
   }
 
@@ -35,7 +35,7 @@ class _Roll extends State<Roll> with TickerProviderStateMixin<Roll> {
       rollFn();
     });
 
-    outtTime = Timer.periodic(Duration(milliseconds: 4000), (timer) {
+    outtTime = Timer.periodic(Duration(milliseconds: 10000), (timer) {
       rollFn();
     });
 
@@ -66,11 +66,18 @@ class _Roll extends State<Roll> with TickerProviderStateMixin<Roll> {
                 top: Px.px(30),
                 left: Px.px(30),
                 child: GestureDetector(
-                  child: Image.asset(
-                    "images/while_out.png",
-                    height: Px.px(30),
-                    fit: BoxFit.contain,
-                  ),
+                  child: Container(
+                      width: Px.px(70),
+                      height: Px.px(70),
+                      alignment: Alignment.center,
+                      decoration: new BoxDecoration(
+                          color: Color(0x99000000),
+                          borderRadius: new BorderRadius.circular(Px.px(35))),
+                      child: Image.asset(
+                        "images/while_out.png",
+                        height: Px.px(30),
+                        fit: BoxFit.contain,
+                      )),
                   onTap: () {
                     outtTime.cancel();
                     outtTime = null;

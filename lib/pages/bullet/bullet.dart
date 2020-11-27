@@ -14,7 +14,7 @@ class _Bullet extends State<Bullet> with TickerProviderStateMixin<Bullet> {
   int textColor = 0xFFF5BC56;
   int textColorIndex = 2;
   TextEditingController textareaValue;
-  String text = 'Hello,World!';
+  String text = '微信：AAAbbbCCC';
   List<int> colorList = [
     0xFF3A4049,
     0xFFE45D5E,
