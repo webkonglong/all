@@ -28,6 +28,7 @@ flutter:
     - images/change_message.png
     - images/submit.png
     - images/out.png
+    - images/while_out.png
     - images/enter.png
     - images/close.png
     - images/full_screen.png
