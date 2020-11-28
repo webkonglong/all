@@ -1,7 +1,10 @@
 # This is a generated file; do not edit or check into version control.
+fluttertoast=/Users/anmingzhe/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluttertoast-7.1.5/
+image_gallery_saver=/Users/anmingzhe/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/image_gallery_saver-1.6.6/
 orientation=/Users/anmingzhe/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/orientation-1.2.0/
 path_provider_linux=/Users/anmingzhe/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider_linux-0.0.1+2/
 path_provider_windows=/Users/anmingzhe/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider_windows-0.0.4+3/
+permission_handler=/Users/anmingzhe/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/permission_handler-5.0.1+1/
 shared_preferences=/Users/anmingzhe/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.5.12+4/
 shared_preferences_linux=/Users/anmingzhe/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_linux-0.0.2+4/
 shared_preferences_macos=/Users/anmingzhe/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_macos-0.0.1+11/

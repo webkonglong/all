@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:flutter/rendering.dart';
 import '../../local_modules/px.dart';
 import '../../components/title.dart';
 import '../../components/button.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'dart:ui' as ui;
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CreateCode extends StatefulWidget {
   @override
@@ -13,6 +18,12 @@ class _CreateCode extends State<CreateCode>
     with TickerProviderStateMixin<CreateCode> {
   final textareaValue = TextEditingController();
   bool isShow = false;
+
+  GlobalKey _globalKey = GlobalKey();
+
+  _toastInfo(String info) {
+    Fluttertoast.showToast(msg: info, toastLength: Toast.LENGTH_LONG);
+  }
 
   Widget appBarWidget() {
     return AppBar(
@@ -62,13 +73,15 @@ class _CreateCode extends State<CreateCode>
 
   Widget qrCode() {
     return isShow
-        ? Container(
-            margin: EdgeInsets.fromLTRB(0, 0, 0, Px.px(60)),
-            child: QrImage(
-              data: textareaValue.text,
-              version: QrVersions.auto,
-              size: Px.px(400),
-            ))
+        ? RepaintBoundary(
+            key: _globalKey,
+            child: Container(
+                margin: EdgeInsets.fromLTRB(0, 0, 0, Px.px(60)),
+                child: QrImage(
+                  data: textareaValue.text,
+                  version: QrVersions.auto,
+                  size: Px.px(400),
+                )))
         : Container();
   }
 
@@ -87,12 +100,32 @@ class _CreateCode extends State<CreateCode>
                   Button(
                       text: isShow ? '保存相册' : '生成',
                       leftText: isShow ? '清除' : '',
-                      callback: () {
+                      callback: () async {
                         if (!isShow) {
                           setState(() {
                             isShow = true;
                           });
-                        } else {}
+                        } else {
+                          var status = await Permission.storage.status;
+                          if (!status.isGranted) {
+                            status = await Permission.storage.request();
+
+                            print(status);
+                            return;
+                          } else {
+                            print('已授权');
+                          }
+
+                          RenderRepaintBoundary boundary =
+                              _globalKey.currentContext.findRenderObject();
+                          ui.Image image = await boundary.toImage();
+                          var byteData = await image.toByteData(
+                              format: ui.ImageByteFormat.png);
+                          final result = await ImageGallerySaver.saveImage(
+                              byteData.buffer.asUint8List());
+                          print(result);
+                          _toastInfo('已保存到相册');
+                        }
                       },
                       leftCallback: () {
                         textareaValue.clear();
